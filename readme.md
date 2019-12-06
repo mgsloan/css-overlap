@@ -7,16 +7,16 @@ which they interact.
 
 The way this works is by:
 
-1. First categorizing stylesheets as into two sets, `A` and `B`.
+1. First categorizing stylesheets into two sets, `A` and `B`.
 
 2. Matching every dom element against the rules in each set. If nodes
    have matching rules in both sets, this is considered a collision.
 
 3. Collisions are deduplicated and logged to the console.
 
-A more complete way of determining stylesheet interactions would be to
-do a proper intersection of the css selectors. However, this would
-take a fair bit more effort. This would detect css selector overlap
+A more complete way of determining stylesheet interactions would involve
+a proper intersection of the css selectors. However, this would
+take a lot more effort. This would detect css selector overlap
 that doesn't occur in practice.
 
 ## Usage
@@ -82,7 +82,7 @@ You may get the following error in the developer tools console:
 > Uncaught DOMException: Failed to read the 'cssRules' property from
 > 'CSSStyleSheet': Cannot access rules
 
-This is due to recent chrome having CORS restrictions for reading CSS
+This is due to recent chrome CORS restrictions for reading CSS
 info from JS. If you serve `css-overlaps.js` from your development
 server, it has good chances of working with the CSS from the server.
 
